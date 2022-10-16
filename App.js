@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
@@ -8,11 +7,9 @@ export default function App() {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <Text onPress={onpresshandler} numberOfLines={7}>Hello World,
-        Student at Punjab Engineering College , Chandigarh.
-        Pursuing B. Tech in Computer Science and Engineering (2019-2023). Enthusiastic and Friendly.
+      <Text onPress={onpresshandler} numberOfLines={3}>Hello World, {'\n'}
+        <Button title='Click me'></Button>
       </Text>
-      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
@@ -20,6 +17,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: '#fff',
+    // alignItems: 'center',
+    // justifyContent: 'center'
   },
 });
