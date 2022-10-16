@@ -3,12 +3,16 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
 
 export default function App() {
-  const [goals, setgoals] = useState();
+  const [goal, setgoal] = useState();
+  const [allGoals, setAllGoals] = useState([]);
   const onEnterText = (entertext) => {
-    setgoals(entertext);
+    setgoal(entertext);
   }
   const onAddHandler = () => {
-    console.log(goals);
+    setAllGoals((currentGoals) => [
+      ...currentGoals,
+      goal
+    ])
   }
   return (
     <SafeAreaView style={styles.container}>
@@ -17,8 +21,8 @@ export default function App() {
         <Button onPress={onAddHandler} title='Add Goal'></Button>
       </View>
       <View>
-        <Text style={styles.goal_list}>List Of Goals .......
-
+        <Text style={styles.goal_list}>
+          {allGoals?.map((itm) => <Text key={itm}>{itm}</Text>)}
         </Text>
       </View>
     </SafeAreaView>
@@ -41,6 +45,8 @@ const styles = StyleSheet.create({
     marginRight: 2,
   },
   goal_list: {
-    marginTop: 5
+    marginTop: 5,
+    flex: 5,
+    flexDirection: 'column'
   }
 });
