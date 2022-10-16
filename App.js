@@ -1,23 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
-  console.log("testing it");
+  const onpresshandler = () => {
+    console.log(" I am clicked");
+  }
   return (
-    <View style={styles.container}>
-      <Text>Hello World,
-        I am testing this app
+    <SafeAreaView style={styles.container}>
+      <Text onPress={onpresshandler} numberOfLines={7}>Hello World,
+        Student at Punjab Engineering College , Chandigarh.
+        Pursuing B. Tech in Computer Science and Engineering (2019-2023). Enthusiastic and Friendly.
       </Text>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'blue',
   },
 });
