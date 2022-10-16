@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Button } from 'react-native';
+import { StyleSheet, Text, Button, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
@@ -8,8 +8,12 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text onPress={onpresshandler} numberOfLines={3}>Hello World, {'\n'}
-        <Button title='Click me'></Button>
+        <View>
+          <Text style={styles.dummystyle}>I am text</Text>
+        </View>
+
       </Text>
+      <Button title='Click me'></Button>
     </SafeAreaView>
   );
 }
@@ -20,5 +24,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center'
+  },
+  dummystyle: {
+    margin: 16,
+    padding: 16,
+    borderWidth: 2,
+    borderColor: 'red',
   },
 });
