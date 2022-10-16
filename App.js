@@ -1,34 +1,37 @@
-import { StyleSheet, Text, Button, View } from 'react-native';
+import { StyleSheet, Text, Button, View, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
-  const onpresshandler = () => {
-    console.log(" I am clicked");
-  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text onPress={onpresshandler} numberOfLines={3}>Hello World, {'\n'}
-        <View>
-          <Text style={styles.dummystyle}>I am text</Text>
-        </View>
+      <View style={styles.input_button}>
+        <TextInput style={styles.inputText} placeholder='Enter Goal' />
+        <Button title='Add Goal'></Button>
+      </View>
+      <View>
+        <Text style={styles.goal_list}>List Of Goals .......
 
-      </Text>
-      <Button title='Click me'></Button>
+        </Text>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center'
+    marginTop: '10%'
   },
-  dummystyle: {
-    margin: 16,
-    padding: 16,
-    borderWidth: 2,
-    borderColor: 'red',
+  input_button: {
+    flexDirection: 'row'
+
   },
+  inputText: {
+    width: '70%',
+    borderWidth: 1,
+    marginRight: 2,
+  },
+  goal_list: {
+    marginTop: 5
+  }
 });
