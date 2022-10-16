@@ -13,3 +13,6 @@ Proerties of text, used here:
 
 # Button 
 * <Button title='Click me'></Button> Button should be imported from react-native
+
+# Styles
+* styles is added with style object, class like nextjs
