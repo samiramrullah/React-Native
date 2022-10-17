@@ -13,7 +13,9 @@ export default function App() {
       ...currentGoals,
       goal
     ])
+
   }
+  console.log(allGoals);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.input_button}>
@@ -21,8 +23,8 @@ export default function App() {
         <Button onPress={onAddHandler} title='Add Goal'></Button>
       </View>
       <View>
-        <Text style={styles.goal_list}>
-          {allGoals?.map((itm) => <Text key={itm}>{itm}</Text>)}
+        <Text style={styles.goal_list}> Text to display
+          {allGoals.map((itm) => <Text key={itm} >{itm}</Text>)}
         </Text>
       </View>
     </SafeAreaView>
@@ -46,7 +48,8 @@ const styles = StyleSheet.create({
   },
   goal_list: {
     marginTop: 5,
-    flex: 5,
-    flexDirection: 'column'
+    // flex: 5,
+    // flexDirection: 'column'
+    flexDirection: 'row'
   }
 });
